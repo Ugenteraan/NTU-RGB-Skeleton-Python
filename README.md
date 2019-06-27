@@ -13,10 +13,10 @@ Functionalities:
 **Demo**
 
 ![Output 1]```
-<img src="output1.avi" width="512" height="280" />
+<img src="./output1.avi" width="512" height="280" />
 ```)
 ![Output 2](```
-<img src="output2" width="512" height="280" />
+<img src="./output2.avi" width="512" height="280" />
 ```)
 
 
