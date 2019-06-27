@@ -16,6 +16,8 @@ Functionalities:
 ![Output 2](gif2.gif)
 ![Output 3](gif3.gif)
 ![Output 4](gif4.gif)
+![Output 5](gif5.gif)
+![Output 6](gif6.gif)
 
 
 **License**
