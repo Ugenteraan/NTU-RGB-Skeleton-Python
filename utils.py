@@ -127,6 +127,14 @@ def no_subject(num_of_frames, read_lines):
 
 def draw_skeleton(skeleton_data, frame):
 
+	for idx in range(len(skeleton_data)):
+
+		x = skeleton_data[idx][0]
+		y = skeleton_data[idx][1]
+
+		#draw cirlces on the points
+		cv2.circle(frame, (x, y), 5, (0,255,0), -1)
+
 	#to draw the lines joining the points
 	for idx in range(len(conf.skel_line_conf)):
 
@@ -141,10 +149,9 @@ def draw_skeleton(skeleton_data, frame):
 		y2 = skeleton_data[second_xy][1]
 
 		#use the index to get the x-y coordinate of the first point and the second point
-		cv2.line(frame, (x1, y1), (x2, y2), (20,215,20), 2)
+		cv2.line(frame, (x1, y1), (x2, y2), (0,255,0), 2)
 
-		#draw cirlces on the points
-		cv2.circle(frame, (x1, y1), 4, (20,215,20), -1)
+		
 
 
 

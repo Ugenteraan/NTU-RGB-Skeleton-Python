@@ -12,8 +12,8 @@ Functionalities:
 
 **Demo**
 
-![Output 1](output1.gif)
-![Output 2](output2.gif)
+![Output 1](gif1.gif)
+![Output 2](gif2.gif)
 
 
 
