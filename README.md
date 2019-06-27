@@ -10,11 +10,12 @@ Functionalities:
 				c) ```python read_skeleton.py --skel=PATH TO .SKELETON FILE --video=PATH TO .AVI FILE --save``` to save the video on the disk.
 
 
-**Demo**
+**Sample Outputs**
 
 ![Output 1](gif1.gif)
 ![Output 2](gif2.gif)
-
+![Output 3](gif3.gif)
+![Output 4](gif4.gif)
 
 
 **License**
