@@ -51,8 +51,9 @@ def care_subject(num_of_frames, read_lines):
 				idx += 1 #next line 
 				jointx = float(read_lines[idx][5]) #5th index is where the x-coordinate of the skeleton is stored.
 				jointy = float(read_lines[idx][6]) #6th index is where the y-coordinate of the skeleton is stored.
+				jointz = float(read_lines[idx][7]) #7th index is where the z-coordinate of the skeleton is stored.
 				
-				temp_skel.append((jointx, jointy))
+				temp_skel.append((jointx, jointy, jointz))
 			
 			#use the subject id as the key to the dictionary.
 			temp_sub[sub_id] = np.asarray(temp_skel) #store the list as np array.
@@ -84,7 +85,7 @@ def no_subject(num_of_frames, read_lines):
 
 	}
 	In this format, each subject's skeletal position information can be extracted using index value instead of specifying the
-	subject's ID in previous format.
+	subject's ID like in previous format.
 
 	Parameter
 	---------
@@ -112,9 +113,10 @@ def no_subject(num_of_frames, read_lines):
 				
 				idx += 1 #next line 
 				jointx = float(read_lines[idx][5]) #5th index is where the x-coordinate of the skeleton is stored.
-				jointy = float(read_lines[idx][6]) #6th index is where the x-coordinate of the skeleton is stored.
+				jointy = float(read_lines[idx][6]) #6th index is where the y-coordinate of the skeleton is stored.
+				jointz = float(read_lines[idx][7]) #7th index is where the z-coordinate of the skeleton is stored.
 				
-				temp_skel.append((jointx, jointy))
+				temp_skel.append((jointx, jointy, jointz))
 			
 			#must convert to float32 since cv2 circle does not accept float 64 data type.
 			temp_sub.append(np.asarray(temp_skel).astype('float32')) #append each subject's skeletal information into the list.
@@ -126,11 +128,14 @@ def no_subject(num_of_frames, read_lines):
 
 
 def draw_skeleton(skeleton_data, frame):
+	
+	#Even though our points are 3 Dimensional, we are only plotting the x and y coordinate of the skeletons
 
 	for idx in range(len(skeleton_data)):
 
 		x = skeleton_data[idx][0]
 		y = skeleton_data[idx][1]
+		
 
 		#draw cirlces on the points
 		cv2.circle(frame, (x, y), 5, (0,255,0), -1)
